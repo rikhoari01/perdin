@@ -1,0 +1,610 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+/* LOGIN */
+
+.login-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+    width: 350px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.form-login {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #d8d6de;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    /* transform: translate(-30px, -20px); */
+    top: -12px;
+    left: 5px;
+    font-size: 12px;
+    background-color: white;
+    padding: 3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-group input:focus {
+    outline: none;
+}
+
+.show-password {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-login {
+    width: 100%;
+    height: 40px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.forgot-password {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* ADMIN */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: calc(100% - 260px);
+    padding: 25px 35px;
+    color: #6e6b7b;
+}
+
+.navbar-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 rgba(34, 41, 47, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    margin-left: 5px;
+}
+
+.user-img {
+    display: inline-flex;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #c3c3c3;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    color: #6e6b7b;
+    box-shadow: 0 0 15px 0 rgba(34, 41, 47, 0.05);
+}
+
+.menu-content {
+    margin-top: 20px;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-title {
+    font-weight: 300;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #6e6b7b;
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.menu .active a {
+    background-color: rgb(241, 94, 54);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu ul li {
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    margin-top: 10px;
+}
+
+.menu-icon {
+    display: inline-block;
+    padding: 5px;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 120px 35px 0;
+    min-height: calc(100% - 120px);
+}
+
+.content-title {
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+.content-container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 rgba(34, 41, 47, 0.05);
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.btn-content {
+    margin-bottom: 20px;
+}
+
+.btn-view,
+.btn-add,
+.btn-edit,
+.btn-delete,
+.btn-approve,
+.btn-reject,
+.btn-yes,
+.btn-no {
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-view {
+    background-color: #0085ba;
+}
+
+.btn-add,
+.btn-approve,
+.btn-reject {
+    width: max-content;
+    padding: 5px 10px;
+    background-color: #008CBA;
+}
+
+.btn-edit,
+.btn-approve,
+.btn-yes {
+    background-color: #00ba0f;
+}
+
+.btn-delete,
+.btn-reject,
+.btn-no {
+    background-color: #ba0000;
+}
+
+.btn-yes,
+.btn-no {
+    width: 100px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.774);
+    display: none;
+}
+
+.modal-top {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    max-height: 100%;
+}
+
+.modal-content,
+.modal-content-delete {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.modal-content-delete {
+    text-align: center;
+    padding: 20px;
+}
+
+.btn-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: rgb(148 163 184);
+    border: none;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+}
+
+.btn-modal:hover {
+    background-color: rgb(229 231 235);
+    color: rgb(17 24 39);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.delete-icon {
+    color: rgb(156 163 175);
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 14px;
+}
+
+.confirm-text {
+    margin-bottom: 30px;
+}
+
+.modal-title {
+    margin-bottom: 30px;
+    font-size: x-large;
+    font-size: medium;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* HRD */
+.menu-tab {
+    margin-bottom: 30px;
+}
+
+.menu-tab li {
+    list-style: none;
+    display: inline-block;
+    height: 35px;
+}
+
+.menu-tab li:hover {
+    list-style: none;
+    display: inline-block;
+}
+
+.menu-tab a {
+    text-decoration: none;
+    color: #6e6b7b;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.new-perdin {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(241, 94, 54);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-tab li.active {
+    border-bottom: 2px solid rgb(241, 94, 54);
+}
+
+.perdin-info {
+    max-width: 150px;
+}
+
+.total-day {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.input-arrow {
+    width: 80px;
+    text-align: center;
+}
+
+.form-info table {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-head {
+    background-color: rgb(241, 94, 54);
+    color: #313131;
+    font-weight: 600;
+}
+
+.info-head td,
+.info-content td {
+    padding: 10px;
+}
+
+.info-content {
+    background-color: rgb(238, 238, 238);
+    color: #005eca;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+.perdin-fee {
+    font-size: 12px;
+    font-weight: 400;
+    color: #313131;
+    margin: 5px 0;
+}
+
+.perdin-clasification {
+    font-size: 10px;
+    font-weight: 400;
+    color: #313131;
+}
+
+/* Pegawai */
+.approve,
+.pending,
+.reject {
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.approve {
+    background-color: rgb(147, 255, 147);
+}
+
+.pending {
+    background-color: rgb(255, 226, 147);
+}
+
+.reject {
+    background-color: rgb(255, 147, 147);
+}
+
+.form-group-2 label {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0 5px 0;
+    font-weight: 500;
+}
+
+.form-group-2 textarea {
+    resize: none;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d8d6de;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group select,
+.input-group input {
+    width: calc(100% / 2 );
+    min-height: 40px;
+    border: 1px solid #d8d6de;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type="date"] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-info-2 {
+    width: 50%;
+    margin: 10px auto;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #d8d6de83;
+    border-radius: 5px;
+}
+
+.info-title {
+    margin-bottom: 10px;
+}
+
+.total-perdin {
+    font-size: 25px;
+    font-weight: 600;
+    color: #005eca;
+}
+
+/* Toast */
+.toast {
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(34, 41, 47, 0.05);
+    background-color: #fff;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+}
+
+.toast-icon-success,
+.toast-icon-error {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+}
+
+.toast-icon-success {
+    color: rgb(34 197 94);
+    background-color: rgb(220 252 231);
+}
+
+.toast-icon-error {
+    color: rgb(239 68 68);
+    background-color: rgb(254 226 226);
+}
+
+.toast-text {
+    margin-left: 12px;
+    font-size: small;
+}
+
+.btn-toast {
+    margin-left: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.btn-toast:hover {
+    background-color: rgb(229 231 235);
+    color: rgb(17 24 39);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer .fa-heart {
+    color: rgb(255, 59, 89);
+}
