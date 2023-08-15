@@ -55,7 +55,7 @@ class AuthController extends Controller
                 return view('dashboard', compact('users'));
             } elseif ($role == 'sdm' && Auth::user()->status ) {
                 $today = date('Y-m-d');
-                $perdin = Perdin::where('date_from', '>', $today)->where('status', 'pending')->get();
+                $perdin = Perdin::where('date_from', '>=', $today)->where('status', 'pending')->get();
 
                 return view('dashboard', compact('perdin'));
             } else {
@@ -77,8 +77,8 @@ class AuthController extends Controller
 
             if($role == 'sdm' && Auth::user()->status) {
                 $today = date('Y-m-d');
-                $perdin = Perdin::where('date_from', '>', $today)->where('status', 'pending')->get();
-                $history = Perdin::where('date_from', '<=', $today)->orWhereIn('status', ['approved', 'rejected'])->get();
+                $perdin = Perdin::where('date_from', '>=', $today)->where('status', 'pending')->get();
+                $history = Perdin::where('date_from', '<', $today)->orWhereIn('status', ['approved', 'rejected'])->get();
                 
                 return view('dashboard', compact('perdin', 'history'));
             }

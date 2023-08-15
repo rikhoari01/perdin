@@ -109,25 +109,19 @@ class PerdinController extends Controller
 
         if ($dist <= 60 && $city[0]->is_overseas == 0 && $city[1]->is_overseas == 0) {
             $fee = 0;
-            $cur = 'IDR';
         } elseif ($dist > 60 && $city[0]->province == $city[1]->province && $city[0]->is_overseas == 0 && $city[1]->is_overseas == 0) {
             $fee = 200000;
-            $cur = 'IDR';
         } elseif ($dist > 60 && $city[0]->province != $city[1]->province && $city[0]->island == $city[1]->island && $city[0]->is_overseas == 0 && $city[1]->is_overseas == 0) {
             $fee = 250000;
-            $cur = 'IDR';
         } elseif ($dist > 60 && $city[0]->province != $city[1]->province && $city[0]->island != $city[1]->island && $city[0]->is_overseas == 0 && $city[1]->is_overseas == 0) {
             $fee = 300000;
-            $cur = 'IDR';
         } elseif ($city[0]->is_overseas == 1 || $city[1]->is_overseas == 1) {
             $fee = 50;
-            $cur = 'USD';
         }
 
         return [
             'distance' => $dist,
             'fee'      => $fee,
-            'cur'      => $cur,
         ];
     }
 }
